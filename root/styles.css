@@ -1,0 +1,38 @@
+#map {
+    height: calc(100% - 40px);
+    width: 100%;
+  }
+  .header {
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .wrapper {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  .label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 0.3em;
+  }
+  
+  #newLocation {
+    padding: 0.2em;
+    font-size: 12px;
+    margin-bottom: 0.5em;
+  }
+  .btn {
+    border: 0px;
+    padding: 5px;
+    color: #4747d0;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
