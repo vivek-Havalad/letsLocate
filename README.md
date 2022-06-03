@@ -13,6 +13,7 @@ npm start  # development
 
 ## Please assign 
 
-```secret_key variable in script.js file with that of provided key
+```
+secret_key variable in script.js file with that of provided key
 
 
