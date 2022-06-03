@@ -1,14 +1,14 @@
 let map, infoWindow;
 
-const secret_key = "";
+let secret_key = "";
 
 function http_get(url, callback) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function () {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-      callback(xmlHttp.responseText);
+      return callback(xmlHttp.responseText);
     } else {
-      callback(false);
+      return callback(false);
     }
   };
   xmlHttp.open('GET', url, true);
@@ -100,9 +100,14 @@ window.initMap = initMap;
 window.handleNewLocation = handleNewLocation;
 
 window.onload = function() {
-  const dom = document.createElement("script");
-  const parentDom = document.getElementById("body");
-  dom.setAttribute("src", "https://maps.googleapis.com/maps/api/js?key="+secret_key+"&callback=initMap&v=weekly");
-  dom.setAttribute("defer", "");
-  parentDom.appendChild(dom);
+  http_get('/key' , (key) => {
+    if(key) {
+      secret_key = key;
+      const dom = document.createElement("script");
+      const parentDom = document.getElementById("body");
+      dom.setAttribute("src", "https://maps.googleapis.com/maps/api/js?key="+secret_key+"&callback=initMap&v=weekly");
+      dom.setAttribute("defer", "");
+      parentDom.appendChild(dom);
+    }
+  })
 }

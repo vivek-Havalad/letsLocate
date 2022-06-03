@@ -8,12 +8,14 @@ The api docs are referred from
 
 ```sh
 npm i
-npm start  # development
+npm start  # to start development server
 ```
 
 ## Please assign 
 
 ```
-secret_key variable in script.js file with that of provided key
+Please place the .env file provided outside the root 
+
+please refresh if any network issue implies
 
 
